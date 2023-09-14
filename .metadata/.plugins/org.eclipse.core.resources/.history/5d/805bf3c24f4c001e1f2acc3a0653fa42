@@ -1,0 +1,5 @@
+package br.edu.infnet.appprojetobloco.model.negocio;
+
+public class Funcionario {
+
+}

@@ -1,0 +1,12 @@
+package br.edu.infnet.apppedido.model.testes;
+
+import br.edu.infnet.apppedido.model.negocio.Pedido;
+
+public class PedidoTeste {
+
+	public static void main(String[] args) {
+		Pedido p1 = new Pedido();
+		
+		System.out.println("Inclusão realiza com sucesso!");
+	}
+}

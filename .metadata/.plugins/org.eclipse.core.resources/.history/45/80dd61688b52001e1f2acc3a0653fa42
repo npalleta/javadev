@@ -1,0 +1,43 @@
+package br.edu.infnet.apppedido.controller;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import br.edu.infnet.apppedido.SolicitanteLoader;
+import br.edu.infnet.apppedido.model.negocio.Solicitante;
+
+@Controller
+public class SolicitanteController {
+	
+	@Autowired
+	private SolicitanteLoader solicitanteLoader;
+	
+	private Map<String, Solicitante> mapaSolicitante = new HashMap<String, Solicitante>();
+
+	public Collection<Solicitante> obterLista(){
+		return mapaSolicitante.values();
+	}
+	
+	public void incluir(Solicitante solicitante) {
+		mapaSolicitante.put(solicitante.getCpf(), solicitante);		
+	}
+	
+	public void excluir() {
+		
+	}
+
+	@GetMapping(value = "/solicitante/lista")
+	public String telaLista(Model model) {
+
+		model.addAttribute("listaSolicitante", solicitanteLoader.obterLista());
+		
+		return "solicitante/lista";
+	}
+}

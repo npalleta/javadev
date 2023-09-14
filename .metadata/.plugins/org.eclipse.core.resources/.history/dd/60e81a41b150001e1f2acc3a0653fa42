@@ -1,0 +1,51 @@
+package br.edu.infnet.apppedido;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
+import br.edu.infnet.apppedido.model.negocio.Pedido;
+import br.edu.infnet.apppedido.model.negocio.Solicitante;
+
+@Order(5)
+@Component
+public class PedidoLoader implements ApplicationRunner {
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		
+		Map<LocalDateTime, Pedido> mapaPedido = new HashMap<LocalDateTime, Pedido>();
+		
+		FileReader file = new FileReader("arquivos/pedido.txt");
+		BufferedReader leitura = new BufferedReader(file);
+		
+		String linha = leitura.readLine();
+		
+		String[] campos = null;
+		
+		while(linha != null) {
+			campos = linha.split(";"); 
+			
+			Pedido pedido = new Pedido();
+					
+
+			mapaPedido.put(pedido.getData(), pedido);
+
+			linha = leitura.readLine();
+		}
+
+		for(Pedido pedido : mapaPedido.values()) {
+			System.out.println("[Pedido] Inclusão realizada com sucesso: " + pedido);			
+		}
+
+		leitura.close();			}
+
+	}
+}

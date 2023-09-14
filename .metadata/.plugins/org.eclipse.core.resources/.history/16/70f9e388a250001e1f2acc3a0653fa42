@@ -1,0 +1,19 @@
+package br.edu.infnet.apppedido.model.negocio;
+
+public class Comida extends Produto {
+
+	//
+	//
+	//
+	
+	public Comida(String nome, float valor, int codigo) {
+		super(nome, valor, codigo);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+}

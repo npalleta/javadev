@@ -1,0 +1,20 @@
+package br.edu.infnet.apppedido;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
+import br.edu.infnet.apppedido.model.negocio.Sobremesa;
+
+@Order(3)
+@Component
+public class SobremesaLoader implements ApplicationRunner {
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		Sobremesa sobremesa = new Sobremesa("Casquinha", 5, 345);
+				
+		System.out.println("[Sobremesa] Inclusão realizada com sucesso: " + sobremesa);
+	}
+}

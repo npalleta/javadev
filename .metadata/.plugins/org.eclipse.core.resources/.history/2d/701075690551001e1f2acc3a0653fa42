@@ -1,0 +1,28 @@
+package br.edu.infnet.apppedido.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import br.edu.infnet.apppedido.model.negocio.Solicitante;
+
+@Controller
+public class SolicitanteController {
+
+	@GetMapping(value = "/solicitante/lista")
+	public String telaLista(Model model) {
+		
+		List<Solicitante> solicitantes = new ArrayList<Solicitante>();
+				
+		solicitantes.add(new Solicitante("ze", "1231231231212", "ze@ze.com"));
+		solicitantes.add(new Solicitante("maria", "34234234234", "maria@ze.com"));
+		solicitantes.add(new Solicitante("joao", "345575677689", "joao@ze.com"));
+		
+		model.addAttribute("listaSolicitante", solicitantes);
+		
+		return "solicitante/lista";
+	}
+}

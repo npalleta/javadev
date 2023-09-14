@@ -1,0 +1,5 @@
+package br.edu.infnet.apppedido.controller;
+
+public class AppController {
+
+}

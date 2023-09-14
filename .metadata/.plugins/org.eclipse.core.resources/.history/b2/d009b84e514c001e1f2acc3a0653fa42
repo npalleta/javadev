@@ -1,0 +1,10 @@
+package br.edu.infnet.appprojetobloco.model.negocio;
+
+public class Funcionario {
+	public String nome;
+	public float salario;
+	
+	public Funcionario() {
+		// TODO Auto-generated constructor stub
+	}
+}

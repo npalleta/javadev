@@ -1,0 +1,10 @@
+package br.edu.infnet.apppedido.model.negocio;
+
+public class Sobremesa extends Produto {
+
+	public Sobremesa(String nome, float valor, int codigo) {
+		super(nome, valor, codigo);
+		// TODO Auto-generated constructor stub
+	}
+
+}

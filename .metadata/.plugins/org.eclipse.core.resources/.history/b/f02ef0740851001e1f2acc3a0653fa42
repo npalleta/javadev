@@ -1,0 +1,27 @@
+package br.edu.infnet.apppedido.controller;
+
+import java.util.Collection;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import br.edu.infnet.apppedido.model.negocio.Solicitante;
+
+@Controller
+public class SolicitanteController {
+	
+	private Collection<Solicitante> solicitantes;	
+
+	public void setSolicitantes(Collection<Solicitante> solicitantes) {
+		this.solicitantes = solicitantes;
+	}
+
+	@GetMapping(value = "/solicitante/lista")
+	public String telaLista(Model model) {
+
+		model.addAttribute("listaSolicitante", solicitantes);
+		
+		return "solicitante/lista";
+	}
+}

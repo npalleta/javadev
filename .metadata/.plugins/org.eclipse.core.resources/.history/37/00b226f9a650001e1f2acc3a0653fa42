@@ -1,0 +1,55 @@
+package br.edu.infnet.apppedido;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
+import br.edu.infnet.apppedido.model.negocio.Comida;
+import br.edu.infnet.apppedido.model.negocio.Sobremesa;
+
+@Order(3)
+@Component
+public class SobremesaLoader implements ApplicationRunner {
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		
+		Map<Integer, Sobremesa> mapaSobremesa = new HashMap<Integer, Sobremesa>();
+		
+		FileReader file = new FileReader("sobremesa.txt");
+		BufferedReader leitura = new BufferedReader(file);
+		
+		String linha = leitura.readLine();
+		
+		String[] campos = null;
+		
+		while(linha != null) {
+			campos = linha.split(";"); 
+					
+			Sobremesa sobremesa = new Sobremesa(
+					campos[0], 
+					Float.valueOf(campos[1]), 
+					Integer.valueOf(campos[2]), 
+					Float.valueOf(campos[3]), 
+					Boolean.valueOf(campos[4]), 
+					campos[5]
+				);
+
+			mapaSobremesa.put(sobremesa.getCodigo(), sobremesa);
+
+			linha = leitura.readLine();
+		}
+
+		for(Sobremesa sobremesa : mapaSobremesa.values()) {
+			System.out.println("[Sobremesa] Inclusão realizada com sucesso: " + sobremesa);			
+		}
+
+		leitura.close();		
+	}
+}

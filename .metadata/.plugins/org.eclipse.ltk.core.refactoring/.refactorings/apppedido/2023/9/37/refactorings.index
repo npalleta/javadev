@@ -1,0 +1,30 @@
+1694436573139	Rename local variable 'mapaBebida'
+1694438150101	Rename local variable 'mapaComida'
+1694438172663	Rename local variable 'comida'
+1694438214017	Copy file
+1694439705065	Move 'bebida.txt' to 'arquivos'
+1694439706757	Move 'comida.txt' to 'arquivos'
+1694439708805	Move 'sobremesa.txt' to 'arquivos'
+1694439867988	Copy file
+1694440607668	Rename local variable 'mapaBebida'
+1694440620715	Rename local variable 'bebida'
+1694440644275	Rename local variable 'bebida'
+1694440967399	Copy file
+1694443095300	Rename local variable 'mapaSolicitante'
+1694443186514	Rename local variable 'solicitante'
+1694444251065	Rename local variable 'pedido'
+1694474999638	Rename resource 'index.jsp'
+1694475815167	Copy file
+1694476493863	Copy file
+1694476530258	Rename resource 'home.jsp'
+1694478832849	Copy file
+1694480794304	Rename method 'obterSolicitantes'
+1694649356768	Copy file
+1694650348840	Copy compilation unit
+1694650411352	Copy compilation unit
+1694650483768	Rename field 'mapaSolicitante'
+1694650530757	Rename local variable 'solicitante'
+1694650562314	Rename local variable 'cpf'
+1694650702067	Copy file
+1694650755895	Copy file
+1694650762950	Rename resource 'login.jsp'

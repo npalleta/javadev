@@ -1,0 +1,28 @@
+package br.edu.infnet.apppedido.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import br.edu.infnet.apppedido.model.negocio.Solicitante;
+
+@Controller
+public class SolicitanteController {
+	
+	private static Map<String, Solicitante> mapaSolicitante = new HashMap<String, Solicitante>();
+
+	public static void incluir(Solicitante solicitante) {
+		mapaSolicitante.put(solicitante.getCpf(), solicitante);
+	}
+
+	@GetMapping(value = "/solicitante/lista")
+	public String telaLista(Model model) {
+
+		model.addAttribute("listaSolicitante", mapaSolicitante);
+		
+		return "solicitante/lista";
+	}
+}

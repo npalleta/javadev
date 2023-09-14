@@ -1,0 +1,37 @@
+package br.edu.infnet.apppedido;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
+import br.edu.infnet.apppedido.model.negocio.Solicitante;
+
+@Order(6)
+@Component
+public class MapLoader implements ApplicationRunner {
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+
+		Solicitante s1 = new Solicitante("maria", "111", "maria@maria.com");
+		Solicitante s2 = new Solicitante("jose", "123", "jose@jose.com");
+		Solicitante s3 = new Solicitante("aninha", "234", "ana@ana.com");
+		
+		Map<String, Solicitante> mapa = new HashMap<String, Solicitante>();
+		mapa.put("111", s1);
+		mapa.put("123", s2);
+		mapa.put("234", s3);
+		
+		mapa.keySet();
+		mapa.values();
+		mapa.get("111");
+
+		mapa.remove("234");
+
+		mapa.get("234");
+	}
+}
