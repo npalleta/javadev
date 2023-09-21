@@ -11,25 +11,29 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	
 	<div class="container-fluid mt-3">
-	  <h3>Listagem de usuários:</h3>
+	  <h3>Listagem de Pedidos:</h3>
 
 	  <table class="table table-striped">
 	    <thead>
 	      <tr>
-	        <th>Nome</th>
-	        <th>E-mail</th>
-	        <th>Senha</th>
+	        <th>Descrição</th>
+	        <th>Data</th>
+	        <th>Web</th>
+	        <th>Solicitante</th>
+	        <th>Produtos</th>
 	        <th></th>
 	      </tr>
 	    </thead>
 	    <tbody>
 	   	    
-	      <c:forEach var="u" items="${listaUsuario}">
+	      <c:forEach var="p" items="${listaPedido}">
 		      <tr>
-		        <td>${u.nome}</td>
-		        <td>${u.email}</td>
-		        <td>${u.senha}</td>
-		        <td><a href="/usuario/${u.email}/excluir">excluir</a> </td>
+		        <td>${p.descricao}</td>
+		        <td>${p.data}</td>
+		        <td>${p.web}</td>
+		        <td>${p.solicitante}</td>
+		        <td>${p.produtos}</td>
+		        <td><a href="/pedido/${p.data}/excluir">excluir</a> </td>
 		      </tr>
 	      </c:forEach>
 	    </tbody>

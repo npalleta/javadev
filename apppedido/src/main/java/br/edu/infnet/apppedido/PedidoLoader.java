@@ -7,21 +7,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.apppedido.model.negocio.Bebida;
-import br.edu.infnet.apppedido.model.negocio.Comida;
-import br.edu.infnet.apppedido.model.negocio.Pedido;
-import br.edu.infnet.apppedido.model.negocio.Produto;
-import br.edu.infnet.apppedido.model.negocio.Sobremesa;
-import br.edu.infnet.apppedido.model.negocio.Solicitante;
+import br.edu.infnet.apppedido.controller.PedidoController;
+import br.edu.infnet.apppedido.model.domain.Bebida;
+import br.edu.infnet.apppedido.model.domain.Comida;
+import br.edu.infnet.apppedido.model.domain.Pedido;
+import br.edu.infnet.apppedido.model.domain.Produto;
+import br.edu.infnet.apppedido.model.domain.Sobremesa;
+import br.edu.infnet.apppedido.model.domain.Solicitante;
 
 @Order(5)
 @Component
 public class PedidoLoader implements ApplicationRunner {
+	
+	@Autowired
+	private PedidoController pedidoController;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -49,7 +54,7 @@ public class PedidoLoader implements ApplicationRunner {
 						new ArrayList<Produto>()
 					);				
 
-				mapaPedido.put(pedido.getData(), pedido);
+				pedidoController.incluir(pedido);
 
 				break;
 

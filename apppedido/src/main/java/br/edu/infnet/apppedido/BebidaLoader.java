@@ -2,25 +2,26 @@ package br.edu.infnet.apppedido;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.apppedido.model.negocio.Bebida;
+import br.edu.infnet.apppedido.controller.BebidaController;
+import br.edu.infnet.apppedido.model.domain.Bebida;
 
 @Order(1)
 @Component
 public class BebidaLoader implements ApplicationRunner {
+	
+	@Autowired
+	private BebidaController bebidaController;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		
-		Map<Integer, Bebida> mapaBebida = new HashMap<Integer, Bebida>();
-		
+
 		FileReader file = new FileReader("arquivos/bebida.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		
@@ -39,14 +40,10 @@ public class BebidaLoader implements ApplicationRunner {
 					Float.valueOf(campos[4]), 
 					campos[5]
 				);				
+
+			bebidaController.incluir(bebida);
 			
-			mapaBebida.put(bebida.getCodigo(), bebida);
-
 			linha = leitura.readLine();
-		}
-
-		for(Bebida bebida : mapaBebida.values()) {
-			System.out.println("[Bebida] Inclusão realizada com sucesso: " + bebida);			
 		}
 
 		leitura.close();		

@@ -8,7 +8,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.apppedido.model.negocio.Solicitante;
+import br.edu.infnet.apppedido.model.domain.Solicitante;
 
 @Order(6)
 @Component

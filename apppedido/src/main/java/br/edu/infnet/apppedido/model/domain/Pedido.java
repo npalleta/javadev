@@ -1,4 +1,4 @@
-package br.edu.infnet.apppedido.model.negocio;
+package br.edu.infnet.apppedido.model.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;

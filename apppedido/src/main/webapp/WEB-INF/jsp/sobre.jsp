@@ -5,183 +5,35 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>AppPedido</title>
-  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+
 	<div class="container mt-3">
-	  <h2>Classe de Domínio</h2>
-	  <p>Pedido</p>            
-	  <table class="table table-striped">
-	    <thead>
-	      <tr>
-	        <th>Campo</th>
-	        <th>Tipo</th>
-	        <th>Observação</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      <tr>
-	        <td>descricao</td>
-	        <td>String</td>
-	        <td>Detalhamento do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>data</td>
-	        <td>LocalDateTime</td>
-	        <td>Data de realização do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>web</td>
-	        <td>boolean</td>
-	        <td>Indicativo se o pedido foi realizado presencialmente ou pela web</td>
-	      </tr>
-	      <tr>
-	        <td>solicitante</td>
-	        <td>Solicitante</td>
-	        <td>Informações do solicitante que realizou o pedido</td>
-	      </tr>
-	      <tr>
-	        <td>produtos</td>
-	        <td>List Produto</td>
-	        <td>Listagem de produtos existentes no pedido</td>
-	      </tr>
-	    </tbody>
-	  </table>
-	  <p>Solicitante</p>            
-	  <table class="table table-striped">
-	    <thead>
-	      <tr>
-	        <th>Campo</th>
-	        <th>Tipo</th>
-	        <th>Observação</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      <tr>
-	        <td>descricao</td>
-	        <td>String</td>
-	        <td>Detalhamento do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>data</td>
-	        <td>LocalDateTime</td>
-	        <td>Data de realização do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>web</td>
-	        <td>boolean</td>
-	        <td>Indicativo se o pedido foi realizado presencialmente ou pela web</td>
-	      </tr>
-	    </tbody>
-	  </table>
-	  <p>Produto</p>            
-	  <table class="table table-striped">
-	    <thead>
-	      <tr>
-	        <th>Campo</th>
-	        <th>Tipo</th>
-	        <th>Observação</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      <tr>
-	        <td>descricao</td>
-	        <td>String</td>
-	        <td>Detalhamento do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>data</td>
-	        <td>LocalDateTime</td>
-	        <td>Data de realização do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>web</td>
-	        <td>boolean</td>
-	        <td>Indicativo se o pedido foi realizado presencialmente ou pela web</td>
-	      </tr>
-	    </tbody>
-	  </table>
-	  <p>Bebida</p>            
-	  <table class="table table-striped">
-	    <thead>
-	      <tr>
-	        <th>Campo</th>
-	        <th>Tipo</th>
-	        <th>Observação</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      <tr>
-	        <td>descricao</td>
-	        <td>String</td>
-	        <td>Detalhamento do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>data</td>
-	        <td>LocalDateTime</td>
-	        <td>Data de realização do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>web</td>
-	        <td>boolean</td>
-	        <td>Indicativo se o pedido foi realizado presencialmente ou pela web</td>
-	      </tr>
-	    </tbody>
-	  </table>
-	  <p>Comida</p>            
-	  <table class="table table-striped">
-	    <thead>
-	      <tr>
-	        <th>Campo</th>
-	        <th>Tipo</th>
-	        <th>Observação</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      <tr>
-	        <td>descricao</td>
-	        <td>String</td>
-	        <td>Detalhamento do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>data</td>
-	        <td>LocalDateTime</td>
-	        <td>Data de realização do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>web</td>
-	        <td>boolean</td>
-	        <td>Indicativo se o pedido foi realizado presencialmente ou pela web</td>
-	      </tr>
-	    </tbody>
-	  </table>
-	  <p>Sobremesa</p>            
-	  <table class="table table-striped">
-	    <thead>
-	      <tr>
-	        <th>Campo</th>
-	        <th>Tipo</th>
-	        <th>Observação</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      <tr>
-	        <td>descricao</td>
-	        <td>String</td>
-	        <td>Detalhamento do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>data</td>
-	        <td>LocalDateTime</td>
-	        <td>Data de realização do pedido</td>
-	      </tr>
-	      <tr>
-	        <td>web</td>
-	        <td>boolean</td>
-	        <td>Indicativo se o pedido foi realizado presencialmente ou pela web</td>
-	      </tr>
-	    </tbody>
-	  </table>
+	  <h2>${projeto.nome} - ${projeto.descricao}</h2>
+	  
+	  <c:forEach var="c" items="${projeto.classes}">
+		  <p>${c.nome}</p>            
+		  <table class="table table-striped">
+		    <thead>
+		      <tr>
+		        <th>Campo</th>
+		        <th>Tipo</th>
+		        <th>Observação</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <c:forEach var="a" items="${c.atributos}">
+			      <tr>
+			        <td>${a.nome}</td>
+			        <td>${a.tipo}</td>
+			        <td>${a.descricao}</td>
+			      </tr>
+		      </c:forEach>
+		    </tbody>
+		  </table>	  
+	  </c:forEach>
 	</div>
 </body>
 </html>

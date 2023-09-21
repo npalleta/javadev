@@ -1,4 +1,4 @@
-package br.edu.infnet.apppedido.model.negocio;
+package br.edu.infnet.apppedido.model.domain;
 
 public class Bebida extends Produto {
 

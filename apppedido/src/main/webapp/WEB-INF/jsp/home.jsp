@@ -5,8 +5,7 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>AppPedido</title>
-  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	

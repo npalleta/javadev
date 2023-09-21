@@ -9,15 +9,15 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.apppedido.controller.SolicitanteController;
-import br.edu.infnet.apppedido.model.negocio.Solicitante;
+import br.edu.infnet.apppedido.model.domain.Solicitante;
+import br.edu.infnet.apppedido.model.service.SolicitanteService;
 
 @Order(4)
 @Component
 public class SolicitanteLoader implements ApplicationRunner {	
 	
 	@Autowired
-	private SolicitanteController solicitanteController;
+	private SolicitanteService solicitanteService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -38,7 +38,7 @@ public class SolicitanteLoader implements ApplicationRunner {
 					campos[2]
 				);	
 
-			solicitanteController.incluir(solicitante);
+			solicitanteService.incluir(solicitante);
 			
 			linha = leitura.readLine();
 		}
