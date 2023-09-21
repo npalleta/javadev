@@ -1,6 +1,0 @@
-package br.edu.infnet.appprojetobloco.model.negocio;
-
-public class Funcionario {
-	private String nome;
-	private float salario;
-}

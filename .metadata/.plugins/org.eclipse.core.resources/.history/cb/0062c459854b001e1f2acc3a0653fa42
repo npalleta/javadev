@@ -1,9 +1,0 @@
-package br.edu.infnet.apppedido.model.negocio;
-
-public abstract class Produto {
-
-	private String nome;
-	private float valor;
-	private int codigo;
-	
-}
